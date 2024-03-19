@@ -18,7 +18,9 @@ Frontend.
 - Service
 - Interface
 - FormsReactive
+
 I would have liked to add but I couldn't due to lack of time:
+
 - Interceptors
 - Best JWT handler
 - I18n
@@ -36,7 +38,9 @@ Main ORM used: JPA with Hibernate
 - JPA
 - JWT
 - Spring Security
+  
 I would have liked to add but I couldn't due to lack of time:
+
 - Spring Cloud with Eureka
 - OAuth
 - Spring Batch
