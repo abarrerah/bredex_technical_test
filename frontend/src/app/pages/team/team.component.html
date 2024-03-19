@@ -1,0 +1,21 @@
+<div class="container bg-light pt-2 pb-2 mt-2 rounded">
+  <form class="m-5" [formGroup]="teamForm">
+    <div class="mb-3">
+      <label for="teamName" class="form-label">Name</label>
+      <input type="email" class="form-control" id="teamName" aria-describedby="emailHelp" formControlName="name" [value]="team?.name">
+    </div>
+    <div class="mb-3">
+      <label for="foundationYear" class="form-label">Foundation Year</label>
+      <input type="email" class="form-control" id="foundationYear" aria-describedby="emailHelp" formControlName="foundationYear" [value]="team?.foundationYear">
+    </div>
+    <div class="mb-3">
+      <label for="champions" class="form-label">Champions</label>
+      <input type="email" class="form-control" id="champions" aria-describedby="emailHelp" formControlName="champions" [value]="team?.champions">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="paidEntryFee" [checked]="team?.paidEntryFee">
+      <label for="paidEntryFee" class="form-label">Paid entry fee </label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="modify()" >Modify</button>
+  </form>
+</div>

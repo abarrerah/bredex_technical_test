@@ -1,7 +1,9 @@
 package abarrerah.app.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
+import abarrerah.app.dto.UserDTO;
 import abarrerah.app.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

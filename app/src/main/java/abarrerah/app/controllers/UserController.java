@@ -1,12 +1,15 @@
 package abarrerah.app.controllers;
 
 import abarrerah.app.dto.UserDTO;
+import abarrerah.app.models.User;
 import abarrerah.app.security.User.UserRequest;
 import abarrerah.app.security.User.UserResponse;
 import abarrerah.app.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1/user")
@@ -22,6 +25,16 @@ public class UserController {
             return ResponseEntity.notFound().build();
         } else {
             return ResponseEntity.ok(userDTO);
+        }
+    }
+
+    @GetMapping(value = "all")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+        if (users.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(users);
         }
     }
 

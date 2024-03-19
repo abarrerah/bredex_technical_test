@@ -10,6 +10,8 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -31,6 +33,10 @@ public class UserService {
         String userResponse = (userUpdated != 0) ? "The user has been updated successfully" : "Something went wrong!";
 
         return new UserResponse(userResponse);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 
     public UserDTO getUser(Integer id) {

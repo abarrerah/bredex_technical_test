@@ -1,0 +1,18 @@
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.form-check-input:checked {
+  background-color: var(--font-color);
+  border-color: var(--background-color);
+  box-shadow: 0 0 0 0.2rem rgba(203, 221, 207, 0.8);
+}
+
+

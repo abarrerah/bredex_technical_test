@@ -1,0 +1,21 @@
+<div class="container bg-light pt-2 pb-2 mt-2 rounded">
+  <form class="m-5" [formGroup]="createTeamForm" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="email" formControlName="name" class="form-control">
+   </div>
+    <div class="mb-3">
+      <label class="form-label">Foundation Year</label>
+      <input type="email" formControlName="foundationYear" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Champions </label>
+      <input type="email" formControlName="champions" class="form-control">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="paidEntryFee">
+      <label for="paidEntryFee" class="form-label" formControlName="example">Paid entry fee </label>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div>

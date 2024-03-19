@@ -2,6 +2,7 @@ package abarrerah.app.controllers;
 
 import abarrerah.app.dto.TeamDTO;
 import abarrerah.app.models.Team;
+import abarrerah.app.security.Team.CreateTeamRequest;
 import abarrerah.app.security.Team.TeamRequest;
 import abarrerah.app.security.Team.TeamResponse;
 import abarrerah.app.service.TeamService;
@@ -16,9 +17,18 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class TeamController {
-
     private final TeamService teamService;
 
+
+    @GetMapping(value = "{id}")
+    public ResponseEntity<TeamDTO> getTeam(@PathVariable Integer id) {
+        TeamDTO teamDTO = teamService.getTeam(id);
+        if (teamDTO == null) {
+            return ResponseEntity.notFound().build();
+        } else  {
+            return ResponseEntity.ok(teamDTO);
+        }
+    }
     @GetMapping(value = "all")
     public ResponseEntity<List<Team>> getTeams() throws Exception {
         try {
@@ -35,8 +45,8 @@ public class TeamController {
         return ResponseEntity.ok(teamService.updateTeam(teamRequest));
     }
 
-    @PutMapping(value = "create")
-    public ResponseEntity<TeamResponse> createTeam(@RequestBody TeamRequest teamRequest) {
-        return ResponseEntity.ok(teamService.createTeam(teamRequest));
+    @PostMapping(value = "create")
+    public ResponseEntity<TeamResponse> createTeam(@RequestBody CreateTeamRequest createTeamRequest) {
+        return ResponseEntity.ok(teamService.createTeam(createTeamRequest));
     }
 }
