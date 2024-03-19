@@ -26,6 +26,7 @@ I would have liked to add but I couldn't due to lack of time:
 - I18n
 - Hydration
 - PWA
+  
 Primary programming language: TypeScript
 CSS framework: Boostrap 5
 
