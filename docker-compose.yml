@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: formula_one_test_2018
+      MYSQL_DATABASE: formula_one_teams
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: formula_one_test_2018
+      MYSQL_AUTHENTICATION_PLUGIN: caching_sha2_password
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
