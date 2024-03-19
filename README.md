@@ -7,4 +7,3 @@ Then we have to start both projects.
 For Angular, we must access the Frontend folder and start the service with the command "ng serve -o".
 For Spring, we must access the app folder and run the javac command to the AppApplication.java file in the src/main/java/abarrerah/app/AppApplication.java path.
 
-Translated with DeepL.com (free version)
